@@ -37,7 +37,6 @@ target_compile_options(fixtures PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/Od>)
 # In CMake 3.12, use target_link_libraries(fixtures PUBLIC earcut_hpp libtess2).
 # Since we support down to CMake 3.2, we need to manually propagate usage requirements of earcut_hpp
 target_include_directories(fixtures PRIVATE "$<TARGET_PROPERTY:earcut_hpp,INTERFACE_INCLUDE_DIRECTORIES>")
-target_compile_features(fixtures PRIVATE "$<TARGET_PROPERTY:earcut_hpp,INTERFACE_COMPILE_FEATURES>")
 
 
 file(GLOB COMPARISON_SOURCE_FILES test/comparison/*.cpp test/comparison/*.hpp)
